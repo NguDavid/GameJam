@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4qgv44ti7iai" path="res://contents/PlayerSprites/Idle/Normal/idle_down.png" id="1_3li8b"]
 [ext_resource type="Texture2D" uid="uid://dmb0ajjt2lrni" path="res://contents/PlayerSprites/Idle/Gun/Idle_Gun_down.png" id="1_axtmv"]
-[ext_resource type="Script" uid="uid://5ulhjr1np1qs" path="res://scripts/player.gd" id="1_jfpux"]
+[ext_resource type="Script" uid="uid://dwd1c1xscaivw" path="res://scripts/Player.gd" id="1_jfpux"]
 [ext_resource type="Texture2D" uid="uid://ddxvvkfs3lfj3" path="res://contents/PlayerSprites/Idle/Gun/Idle_Gun_left_down.png" id="2_6x32p"]
 [ext_resource type="Texture2D" uid="uid://csavlsma6axl3" path="res://contents/PlayerSprites/Idle/Normal/idle_left_down.png" id="2_cw2d6"]
 [ext_resource type="Texture2D" uid="uid://5ur48n7iabd1" path="res://contents/PlayerSprites/Idle/Normal/idle_left_up.png" id="2_mdl7e"]
@@ -2342,7 +2342,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mgg3w")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Down",
 "speed": 15.0
 }, {
@@ -2371,7 +2371,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qycqj")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Left",
 "speed": 15.0
 }, {
@@ -2400,7 +2400,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vyisp")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Left_Down",
 "speed": 15.0
 }, {
@@ -2429,7 +2429,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wbpgj")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Left_Up",
 "speed": 15.0
 }, {
@@ -2458,7 +2458,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j0ql1")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Right",
 "speed": 15.0
 }, {
@@ -2487,7 +2487,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3bnxp")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Right_Down",
 "speed": 15.0
 }, {
@@ -2516,7 +2516,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w6i1n")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Right_Up",
 "speed": 15.0
 }, {
@@ -2545,7 +2545,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xvg4b")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Gun_Up",
 "speed": 15.0
 }, {
@@ -2574,7 +2574,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ka0gh")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Down",
 "speed": 10.0
 }, {
@@ -2603,7 +2603,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fl84o")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Left",
 "speed": 10.0
 }, {
@@ -2632,7 +2632,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lbyf1")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Left_Down",
 "speed": 10.0
 }, {
@@ -2661,7 +2661,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7g6vs")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Left_Up",
 "speed": 10.0
 }, {
@@ -2690,7 +2690,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6wx4m")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Right",
 "speed": 10.0
 }, {
@@ -2719,7 +2719,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nb03a")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Right_Down",
 "speed": 10.0
 }, {
@@ -2748,7 +2748,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1p33d")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Right_Up",
 "speed": 10.0
 }, {
@@ -2777,7 +2777,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hoff3")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Spear_Up",
 "speed": 10.0
 }, {
@@ -4360,5 +4360,4 @@ shape = SubResource("CircleShape2D_oanc2")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6osir")
-animation = &"Attack_Spear_Right"
-frame_progress = 0.49885088
+animation = &"Idle_Gun_Down"
