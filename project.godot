@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Game Jam"
-run/main_scene="uid://evgs2en8b83r"
+config/name="New Game Project"
+run/main_scene="uid://ne32xmupebig"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
