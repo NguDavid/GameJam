@@ -3354,6 +3354,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_jfpux")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -3361,4 +3362,3 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6osir")
 animation = &"Walk_Spear_Up"
 frame_progress = 0.7261596
-script = ExtResource("1_jfpux")
