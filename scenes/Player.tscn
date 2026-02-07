@@ -1,8 +1,8 @@
-[gd_scene load_steps=633 format=3 uid="uid://evgs2en8b83r"]
+[gd_scene load_steps=634 format=3 uid="uid://evgs2en8b83r"]
 
 [ext_resource type="Texture2D" uid="uid://4qgv44ti7iai" path="res://contents/PlayerSprites/Idle/Normal/idle_down.png" id="1_3li8b"]
 [ext_resource type="Texture2D" uid="uid://dmb0ajjt2lrni" path="res://contents/PlayerSprites/Idle/Gun/Idle_Gun_down.png" id="1_axtmv"]
-[ext_resource type="Script" uid="uid://5ulhjr1np1qs" path="res://scripts/Player.gd" id="1_jfpux"]
+[ext_resource type="Script" uid="uid://5ulhjr1np1qs" path="res://scripts/player.gd" id="1_jfpux"]
 [ext_resource type="Texture2D" uid="uid://ddxvvkfs3lfj3" path="res://contents/PlayerSprites/Idle/Gun/Idle_Gun_left_down.png" id="2_6x32p"]
 [ext_resource type="Texture2D" uid="uid://csavlsma6axl3" path="res://contents/PlayerSprites/Idle/Normal/idle_left_down.png" id="2_cw2d6"]
 [ext_resource type="Texture2D" uid="uid://5ur48n7iabd1" path="res://contents/PlayerSprites/Idle/Normal/idle_left_up.png" id="2_mdl7e"]
@@ -71,6 +71,9 @@
 [ext_resource type="Texture2D" uid="uid://dpd5a1fbnauag" path="res://contents/PlayerSprites/Walk/Spear/walk_spear_right_down.png" id="52_xfjxt"]
 [ext_resource type="Texture2D" uid="uid://de0mp6nr6om22" path="res://contents/PlayerSprites/Walk/Spear/walk_spear_right_up.png" id="53_i5kac"]
 [ext_resource type="Texture2D" uid="uid://dr214aprydnjn" path="res://contents/PlayerSprites/Walk/Spear/walk_spear_up.png" id="54_qycqj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oanc2"]
+radius = 13.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27epi"]
 atlas = ExtResource("2_oanc2")
@@ -4346,11 +4349,16 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_jfpux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 17)
+shape = SubResource("CircleShape2D_oanc2")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6osir")
-animation = &"Idle_Gun_Down"
-frame_progress = 0.4095775
+animation = &"Attack_Spear_Right"
+frame_progress = 0.49885088
