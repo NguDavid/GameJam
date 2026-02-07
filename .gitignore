@@ -1,28 +1,3 @@
-# Godot cache
+# Godot 4+ specific ignores
 .godot/
-
-# Exports
-export/
-*.pck
-*.zip
-
-# Mono / C# (si jamais)
-.mono/
-data_*/
-*.csproj
-*.sln
-
-# Logs
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-
-# Backup files
-*~
-*.bak
+/android/
