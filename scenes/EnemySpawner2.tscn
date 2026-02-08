@@ -8,5 +8,5 @@ script = ExtResource("1_gcon7")
 enemy_scene = ExtResource("2_tep1s")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 10.0
 autostart = true
