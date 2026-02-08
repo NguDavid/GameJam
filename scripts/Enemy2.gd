@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 @export var speed: float = 50.0
 @export var dash_speed: float = 200.0
-@export var stopping_distance: float = 50.0
-@export var knockback_force: float = 300.0
-@export var max_health: float = 100.0
-@export var damage: float = 20.0
+@export var stopping_distance: float = 100.0
+@export var knockback_force: float = 200.0
+@export var max_health: float = 50.0
+@export var damage: float = 10.0
 
 @onready var sprite: AnimatedSprite2D = $Animation
 @onready var dash_timer: Timer = $ShootTimer
