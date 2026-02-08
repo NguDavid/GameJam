@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b3tw8wso8h1n4"]
+[gd_scene load_steps=42 format=3 uid="uid://b3tw8wso8h1n4"]
 
 [ext_resource type="Script" uid="uid://bx34wq83u8org" path="res://scripts/tomato.gd" id="1_gb5vg"]
 [ext_resource type="Texture2D" uid="uid://gkn2fiqlu66p" path="res://contents/Enemies/tomate-Sheet.png" id="2_2xytr"]
@@ -281,6 +281,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i5h1u"]
 radius = 35.22783
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gb5vg"]
+radius = 45.39824
+
 [node name="Tomato" type="CharacterBody2D"]
 script = ExtResource("1_gb5vg")
 
@@ -297,3 +300,11 @@ position = Vector2(2, 13)
 shape = SubResource("CircleShape2D_i5h1u")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_gb5vg")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
