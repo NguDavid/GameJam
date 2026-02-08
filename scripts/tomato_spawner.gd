@@ -12,7 +12,7 @@ func _ready() -> void:
 		print("ERREUR : Le nœud Timer est introuvable ! Vérifie le nom.")
 		return
 
-	boss_timer.wait_time = 10.0
+	boss_timer.wait_time = 90.0
 	boss_timer.one_shot = false
 	
 	if not boss_timer.timeout.is_connected(_on_boss_timer_timeout):

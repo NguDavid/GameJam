@@ -168,9 +168,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1t2ff")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 4.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -287,9 +287,10 @@ script = ExtResource("1_gb5vg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_b1tv2")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.4443529
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 13)

@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var dash_speed: float = 250.0
 @export var stopping_distance: float = 100.0
 @export var knockback_force: float = 300.0
-@export var max_health: float = 100.0
+@export var max_health: float = 1000.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dash_timer: Timer = $Timer
@@ -19,18 +19,21 @@ var dash_direction: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	current_health = max_health
 	player = get_tree().get_first_node_in_group("Player")
+	
 	dash_timer.one_shot = true 
-	dash_timer.timeout.connect(_on_dash_cooldown_finished)
-	sprite.animation_finished.connect(_on_animation_finished)
+	
+	# Sécurité des connexions
+	if not dash_timer.timeout.is_connected(_on_dash_cooldown_finished):
+		dash_timer.timeout.connect(_on_dash_cooldown_finished)
+	
+	if not sprite.animation_finished.is_connected(_on_animation_finished):
+		sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
-	if player == null or is_dead:
+	if is_dead or player == null:
 		return
-		
+	
 	var direction_to_player = global_position.direction_to(player.global_position)
-	# On met à jour l'animation TOUT LE TEMPS pour qu'il suive le joueur du regard
-	update_animation(direction_to_player)
-
 	knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 500 * delta)
 	
 	if is_dashing:
@@ -44,62 +47,72 @@ func _physics_process(delta: float) -> void:
 			if dash_timer.is_stopped():
 				start_dash(direction_to_player)
 	
-		move_and_slide()
+	# On met à jour l'animation juste avant de bouger
+	update_animation(direction_to_player)
+	move_and_slide()
+
+func update_animation(dir: Vector2) -> void:
+	# SI LE BOSS EST MORT, ON NE TOUCHE PLUS AUX ANIMATIONS
+	if is_dead: 
+		return 
+
+	# GESTION DU FLIP (Le sens de la tomate)
+	if dir.x > -0.1: # On va à gauche
+		sprite.flip_h = true
+	elif dir.x < 0.1: # On va à droite
+		sprite.flip_h = false
+
+	# GESTION DU NOM DE L'ANIMATION
+	var anim_name = "Down"
+	if abs(dir.x) > abs(dir.y):
+		# On utilise TOUJOURS "Right". Si flip_h est vrai, elle regardera à gauche.
+		anim_name = "Right" 
+	else:
+		anim_name = "Down" if dir.y > 0 else "Up"
+	
+	var final_anim = "Move_" + anim_name
+	
+	# On ne lance l'animation que si elle est différente de l'actuelle (optimisation)
+	if sprite.animation != final_anim:
+		if sprite.sprite_frames.has_animation(final_anim):
+			sprite.play(final_anim)
 
 func take_damage(source_position: Vector2, damage: float = 25.0):
-	if is_dead:
-		return	
+	if is_dead: return    
+	
 	current_health -= damage
 	var push_dir = source_position.direction_to(global_position)
 	knockback_velocity = push_dir * knockback_force
-	is_dashing = false
+	
 	if current_health <= 0:
 		die()
 
 func die():
-	is_dead = true
+	if is_dead: return
+	is_dead = true # Bloque _physics_process et update_animation
+	
 	velocity = Vector2.ZERO
 	collision_layer = 0
 	collision_mask = 0
-	if sprite.sprite_frames.has_animation("Death"):
-		sprite.play("Death")
+	
+	if sprite.sprite_frames.has_animation("death"):
+		sprite.play("death")
+		print("Lancement de l'animation de mort")
 	else:
+		print("Animation Death introuvable, suppression immédiate")
 		queue_free()
 
 func _on_animation_finished() -> void:
-	if sprite.animation == "Death":
+	if sprite.animation == "death":
 		queue_free()
 
 func start_dash(dir: Vector2) -> void:
+	if is_dead: return
 	is_dashing = true
 	dash_direction = dir
-	update_animation(dir)
 	await get_tree().create_timer(0.4).timeout
 	is_dashing = false
 	dash_timer.start(2.5)
 
 func _on_dash_cooldown_finished() -> void:
-	pass 
-
-func update_animation(dir: Vector2) -> void:
-	# 1. Gérer le FLIP (miroir)
-	# On regarde la direction X pour décider de flipper le sprite
-	if dir.x < 0:
-		sprite.flip_h = false # Regarde à droite
-	elif dir.x > 0:
-		sprite.flip_h = true  # Regarde à gauche (miroir)
-
-	# 2. Choisir l'ANIMATION
-	var anim_name = "Down"
-	
-	if abs(dir.x) > abs(dir.y):
-		# On utilise "Right" pour le mouvement horizontal. 
-		# Si on va à gauche, le flip_h s'occupera de retourner l'image "Right".
-		anim_name = "Right" 
-	else:
-		anim_name = "Down" if dir.y > 0 else "Up"
-	
-	# 3. Jouer l'animation
-	var final_anim = "Move_" + anim_name
-	if sprite.sprite_frames.has_animation(final_anim):
-		sprite.play(final_anim)
+	pass
