@@ -1,5 +1,4 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1c578383nraq"]
-[gd_scene load_steps=5 format=3 uid="uid://b1c578383nraq"]
 
 [ext_resource type="PackedScene" uid="uid://ne32xmupebig" path="res://scenes/WorldMap.tscn" id="1_ibiss"]
 [ext_resource type="PackedScene" uid="uid://evgs2en8b83r" path="res://scenes/Player.tscn" id="2_c6dvc"]
