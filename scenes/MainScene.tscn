@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ne32xmupebig" path="res://scenes/WorldMap.tscn" id="1_ibiss"]
 [ext_resource type="PackedScene" uid="uid://evgs2en8b83r" path="res://scenes/Player.tscn" id="2_c6dvc"]
 [ext_resource type="PackedScene" uid="uid://m8eow87iwxu0" path="res://scenes/EnemySpawner.tscn" id="3_c6dvc"]
-[ext_resource type="PackedScene" path="res://scenes/TomatoSpawner.tscn" id="4_611at"]
+[ext_resource type="PackedScene" uid="uid://c7x3xvm703jun" path="res://scenes/TomatoSpawner.tscn" id="4_611at"]
 [ext_resource type="PackedScene" uid="uid://dauvgwp432qkw" path="res://scenes/HUD.tscn" id="4_hud"]
 [ext_resource type="PackedScene" uid="uid://c68pudvvqb5kh" path="res://scenes/EnemySpawner2.tscn" id="6_ygjfp"]
 
@@ -18,74 +18,100 @@ scale = Vector2(0.5, 0.5)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
-[node name="EnemySpawner" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(1314, 469)
-
-[node name="EnemySpawner2" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(-70, 715)
-
-[node name="EnemySpawner3" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(-604, 550)
-
 [node name="TomatoSpawner" parent="." instance=ExtResource("4_611at")]
 position = Vector2(-949, 339)
 
 [node name="HUD" parent="." instance=ExtResource("4_hud")]
 
-[node name="EnemySpawner4" parent="." instance=ExtResource("4_611at")]
-position = Vector2(-249, 752)
+[node name="TomatoSpawner2" parent="." instance=ExtResource("4_611at")]
+position = Vector2(1406, 242)
 
-[node name="EnemySpawner5" parent="." instance=ExtResource("4_611at")]
-position = Vector2(48, 325)
+[node name="TomatoSpawner3" parent="." instance=ExtResource("4_611at")]
+position = Vector2(936, 1757)
 
-[node name="EnemySpawner6" parent="." instance=ExtResource("4_611at")]
-position = Vector2(760, 364)
+[node name="TomatoSpawner4" parent="." instance=ExtResource("4_611at")]
+position = Vector2(385, 1047)
 
-[node name="EnemySpawner7" parent="." instance=ExtResource("4_611at")]
-position = Vector2(-549, 682)
+[node name="TomatoSpawner5" parent="." instance=ExtResource("4_611at")]
+position = Vector2(-755, 1673)
 
-[node name="EnemySpawner8" parent="." instance=ExtResource("4_611at")]
-position = Vector2(1404, 225)
-scale = Vector2(0.25, 0.25)
+[node name="EnemySpawner2" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(746, 1286)
 
-[node name="EnemySpawner11" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(8, 1079)
+[node name="EnemySpawner" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(-932, 204)
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(-880, 529)
+
+[node name="EnemySpawner4" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(-104, 1405)
+
+[node name="EnemySpawner5" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(-793, 1439)
+
+[node name="EnemySpawner6" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(-295, 508)
+
+[node name="EnemySpawner7" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(382, 515)
+
+[node name="EnemySpawner8" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(1, 924)
 
 [node name="EnemySpawner9" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(8, 1079)
-
-[node name="EnemySpawner12" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(1081, 1115)
+position = Vector2(91, 282)
 
 [node name="EnemySpawner10" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(1081, 1115)
+position = Vector2(-490, 1885)
+
+[node name="EnemySpawner11" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(1063, 1339)
+
+[node name="EnemySpawner12" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(1384, 525)
 
 [node name="EnemySpawner13" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(-1139, 400)
+position = Vector2(811, 204)
 
 [node name="EnemySpawner14" parent="." instance=ExtResource("6_ygjfp")]
-position = Vector2(-796, 253)
+position = Vector2(-86, 249)
 
 [node name="EnemySpawner15" parent="." instance=ExtResource("6_ygjfp")]
-position = Vector2(-621, 1376)
+position = Vector2(59, 549)
 
 [node name="EnemySpawner16" parent="." instance=ExtResource("6_ygjfp")]
-position = Vector2(-476, 1523)
-
-[node name="EnemySpawner18" parent="." instance=ExtResource("6_ygjfp")]
-position = Vector2(-611, 1823)
+position = Vector2(549, 400)
 
 [node name="EnemySpawner17" parent="." instance=ExtResource("6_ygjfp")]
-position = Vector2(-943, 1580)
+position = Vector2(1063, 211)
 
-[node name="EnemySpawner19" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(868, 1598)
+[node name="EnemySpawner18" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(1146, 611)
 
-[node name="EnemySpawner20" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(1231, 1445)
+[node name="EnemySpawner19" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(1464, 711)
 
-[node name="EnemySpawner21" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(776, 1318)
+[node name="EnemySpawner20" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(856, 1056)
 
-[node name="EnemySpawner22" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(415, 1082)
+[node name="EnemySpawner21" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(1243, 1177)
+
+[node name="EnemySpawner22" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-718, 338)
+
+[node name="EnemySpawner23" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-1132, 342)
+
+[node name="EnemySpawner24" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-452, 759)
+
+[node name="EnemySpawner25" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-418, 1336)
+
+[node name="EnemySpawner26" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-911, 1823)
+
+[node name="EnemySpawner27" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(877, 1522)

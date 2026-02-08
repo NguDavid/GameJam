@@ -2,7 +2,7 @@ extends Node2D
 
 @export var enemy_scene: PackedScene 
 @export var spawn_radius: float = 500.0
-@export var max_enemies: int = 10
+@export var max_enemies: int = 25
 
 @onready var timer: Timer = $SpawnTimer
 
