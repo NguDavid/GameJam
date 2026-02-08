@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bnic4nj4mrltm"]
+[gd_scene load_steps=28 format=3 uid="uid://bnic4nj4mrltm"]
 
 [ext_resource type="Script" uid="uid://x7y14g28bujq" path="res://scripts/Enemy.gd" id="1_3gvst"]
 [ext_resource type="Texture2D" uid="uid://b04sjk73e23ej" path="res://contents/Enemies/Enemy_053.png" id="2_55jtl"]
@@ -186,8 +186,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 12.0
-height = 24.0
+radius = 16.0
+height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
+radius = 21.333334
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
 scale = Vector2(0.75, 0.75)
@@ -199,10 +202,18 @@ script = ExtResource("1_3gvst")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8fyuy")
 animation = &"Move_Left"
+animation = &"Death"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 17.333334)
+position = Vector2(0, 9.333333)
 shape = SubResource("CapsuleShape2D_55jtl")
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 9.333334)
+shape = SubResource("CircleShape2D_55jtl")
