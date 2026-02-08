@@ -1,8 +1,8 @@
-[gd_scene load_steps=634 format=3 uid="uid://evgs2en8b83r"]
+[gd_scene load_steps=642 format=3 uid="uid://evgs2en8b83r"]
 
 [ext_resource type="Texture2D" uid="uid://4qgv44ti7iai" path="res://contents/PlayerSprites/Idle/Normal/idle_down.png" id="1_3li8b"]
 [ext_resource type="Texture2D" uid="uid://dmb0ajjt2lrni" path="res://contents/PlayerSprites/Idle/Gun/Idle_Gun_down.png" id="1_axtmv"]
-[ext_resource type="Script" uid="uid://bk5x81sjr75gu" path="res://scripts/Player.gd" id="1_jfpux"]
+[ext_resource type="Script" uid="uid://cy5js8im7hoa5" path="res://scripts/Player.gd" id="1_jfpux"]
 [ext_resource type="Texture2D" uid="uid://ddxvvkfs3lfj3" path="res://contents/PlayerSprites/Idle/Gun/Idle_Gun_left_down.png" id="2_6x32p"]
 [ext_resource type="Texture2D" uid="uid://csavlsma6axl3" path="res://contents/PlayerSprites/Idle/Normal/idle_left_down.png" id="2_cw2d6"]
 [ext_resource type="Texture2D" uid="uid://5ur48n7iabd1" path="res://contents/PlayerSprites/Idle/Normal/idle_left_up.png" id="2_mdl7e"]
@@ -71,9 +71,6 @@
 [ext_resource type="Texture2D" uid="uid://dpd5a1fbnauag" path="res://contents/PlayerSprites/Walk/Spear/walk_spear_right_down.png" id="52_xfjxt"]
 [ext_resource type="Texture2D" uid="uid://de0mp6nr6om22" path="res://contents/PlayerSprites/Walk/Spear/walk_spear_right_up.png" id="53_i5kac"]
 [ext_resource type="Texture2D" uid="uid://dr214aprydnjn" path="res://contents/PlayerSprites/Walk/Spear/walk_spear_up.png" id="54_qycqj"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_oanc2"]
-radius = 13.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27epi"]
 atlas = ExtResource("2_oanc2")
@@ -2344,7 +2341,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Down",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2373,7 +2370,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Left",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2402,7 +2399,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Left_Down",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2431,7 +2428,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Left_Up",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2460,7 +2457,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Right",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2489,7 +2486,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Right_Down",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2518,7 +2515,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Right_Up",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2547,7 +2544,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_Gun_Up",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -4348,16 +4345,112 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 2
-script = ExtResource("1_jfpux")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oanc2"]
+radius = 8.0
+height = 22.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 17)
-shape = SubResource("CircleShape2D_oanc2")
+[sub_resource type="CircleShape2D" id="CircleShape2D_oanc2"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41lfj"]
+radius = 28.01785
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nh4m"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hk6f"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmxrx"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvw7q"]
+radius = 28.01785
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0eor"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrwhh"]
+radius = 28.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 3
+script = ExtResource("1_jfpux")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6osir")
-animation = &"Attack_Gun_Down"
+animation = &"Attack_Spear_Down"
+frame = 5
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_oanc2")
+
+[node name="SpearRotator" type="Node2D" parent="."]
+
+[node name="Spear_Down" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Down"]
+position = Vector2(0, 28)
+shape = SubResource("CircleShape2D_oanc2")
+disabled = true
+
+[node name="Spear_Left" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Left"]
+position = Vector2(-28, 0)
+shape = SubResource("CircleShape2D_41lfj")
+disabled = true
+
+[node name="Spear_Left_Down" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Left_Down"]
+position = Vector2(-28, 28)
+shape = SubResource("CircleShape2D_1nh4m")
+disabled = true
+
+[node name="Spear_Left_Up" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Left_Up"]
+position = Vector2(-28, -28)
+shape = SubResource("CircleShape2D_2hk6f")
+disabled = true
+
+[node name="Spear_Right" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Right"]
+position = Vector2(28, 0)
+shape = SubResource("CircleShape2D_xmxrx")
+disabled = true
+
+[node name="Spear_Right_Down" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Right_Down"]
+position = Vector2(28, 28)
+shape = SubResource("CircleShape2D_kvw7q")
+disabled = true
+
+[node name="Spear_Right_Up" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Right_Up"]
+position = Vector2(28, -28)
+shape = SubResource("CircleShape2D_p0eor")
+disabled = true
+
+[node name="Spear_Up" type="Area2D" parent="SpearRotator"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpearRotator/Spear_Up"]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_nrwhh")
+disabled = true
