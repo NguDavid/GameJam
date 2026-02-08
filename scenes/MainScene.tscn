@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1c578383nraq"]
+[gd_scene load_steps=5 format=3 uid="uid://b1c578383nraq"]
 
 [ext_resource type="PackedScene" uid="uid://ne32xmupebig" path="res://scenes/WorldMap.tscn" id="1_ibiss"]
 [ext_resource type="PackedScene" uid="uid://evgs2en8b83r" path="res://scenes/Player.tscn" id="2_c6dvc"]
 [ext_resource type="PackedScene" uid="uid://m8eow87iwxu0" path="res://scenes/EnemySpawner.tscn" id="3_c6dvc"]
+[ext_resource type="PackedScene" uid="uid://c68pudvvqb5kh" path="res://scenes/EnemySpawner2.tscn" id="4_611at"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -16,10 +17,26 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(1296, 297)
+position = Vector2(1314, 469)
 
 [node name="EnemySpawner2" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(99, 628)
+position = Vector2(-70, 715)
 
 [node name="EnemySpawner3" parent="." instance=ExtResource("3_c6dvc")]
-position = Vector2(-604, 550)
+position = Vector2(-326, 663)
+
+[node name="EnemySpawner4" parent="." instance=ExtResource("4_611at")]
+position = Vector2(-249, 752)
+
+[node name="EnemySpawner5" parent="." instance=ExtResource("4_611at")]
+position = Vector2(48, 325)
+
+[node name="EnemySpawner6" parent="." instance=ExtResource("4_611at")]
+position = Vector2(760, 364)
+
+[node name="EnemySpawner7" parent="." instance=ExtResource("4_611at")]
+position = Vector2(-549, 682)
+
+[node name="EnemySpawner8" parent="." instance=ExtResource("4_611at")]
+position = Vector2(1404, 225)
+scale = Vector2(0.25, 0.25)
