@@ -198,9 +198,7 @@ script = ExtResource("1_3gvst")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8fyuy")
-animation = &"Death"
-frame = 5
-frame_progress = 1.0
+animation = &"Move_Left"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17.333334)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7x3xvm703jun"]
+
+[ext_resource type="Script" uid="uid://byl7nf6tnrglr" path="res://scripts/tomato_spawner.gd" id="1_4cy8j"]
+[ext_resource type="PackedScene" uid="uid://b3tw8wso8h1n4" path="res://scenes/Tomato.tscn" id="2_3ar8h"]
+
+[node name="TomatoSpawner" type="Node2D"]
+script = ExtResource("1_4cy8j")
+boss_scene = ExtResource("2_3ar8h")
+
+[node name="Timer" type="Timer" parent="."]
