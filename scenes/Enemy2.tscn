@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://c6qc6whf5jes6"]
 
-[ext_resource type="Script" uid="uid://dlfu1co3brwtt" path="res://scripts/Enemy2.gd" id="1_0h3bv"]
+[ext_resource type="Script" path="res://scripts/Enemy2.gd" id="1_0h3bv"]
 [ext_resource type="Texture2D" uid="uid://cl3f1cokqm6dq" path="res://contents/Enemies/Enemy_008.png" id="2_i1eqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wna3i"]
@@ -186,13 +186,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i1eqr"]
-radius = 7.0
-height = 24.0
+radius = 12.0
+height = 34.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1eqr"]
-radius = 16.124516
+radius = 18.0
 
 [node name="Enemy2" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_0h3bv")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
@@ -202,8 +204,7 @@ animation = &"Move_Up"
 frame_progress = 0.40068555
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 31)
-rotation = 1.5707964
+position = Vector2(0, 17)
 shape = SubResource("CapsuleShape2D_i1eqr")
 
 [node name="ShootTimer" type="Timer" parent="."]

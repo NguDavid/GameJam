@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var run_speed: float = 200.0
 @export var max_health: float = 100.0
 
+signal player_died
+
 var current_health: float
 var is_dead: bool = false
 var bullet_scene = preload("res://scenes/Bullet.tscn")
@@ -55,6 +57,7 @@ func take_damage(source_position: Vector2, damage: float = 25.0):
 
 func die():
 	is_dead = true
+	emit_signal("player_died")
 	velocity = Vector2.ZERO
 	collision_layer = 0
 	collision_mask = 0

@@ -186,8 +186,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 8.0
-height = 26.666668
+radius = 16.0
+height = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
 radius = 21.333334
@@ -204,8 +204,7 @@ sprite_frames = SubResource("SpriteFrames_8fyuy")
 animation = &"Death"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(5.092223e-14, 26.666668)
-rotation = 1.5707964
+position = Vector2(0, 9.333333)
 shape = SubResource("CapsuleShape2D_55jtl")
 
 [node name="ShootTimer" type="Timer" parent="."]
@@ -215,5 +214,5 @@ wait_time = 2.0
 collision_layer = 0
 
 [node name="Hitbox" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 18.666668)
+position = Vector2(0, 9.333334)
 shape = SubResource("CircleShape2D_55jtl")
