@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1c578383nraq"]
+[gd_scene load_steps=7 format=3 uid="uid://b1c578383nraq"]
 
 [ext_resource type="PackedScene" uid="uid://ne32xmupebig" path="res://scenes/WorldMap.tscn" id="1_ibiss"]
 [ext_resource type="PackedScene" uid="uid://evgs2en8b83r" path="res://scenes/Player.tscn" id="2_c6dvc"]
 [ext_resource type="PackedScene" uid="uid://m8eow87iwxu0" path="res://scenes/EnemySpawner.tscn" id="3_c6dvc"]
-[ext_resource type="PackedScene" uid="uid://hudscenerefile" path="res://scenes/HUD.tscn" id="4_hud"]
-[ext_resource type="PackedScene" uid="uid://c68pudvvqb5kh" path="res://scenes/EnemySpawner2.tscn" id="4_611at"]
-[ext_resource type="PackedScene" uid="uid://c7x3xvm703jun" path="res://scenes/TomatoSpawner.tscn" id="4_611at"]
+[ext_resource type="PackedScene" path="res://scenes/TomatoSpawner.tscn" id="4_611at"]
+[ext_resource type="PackedScene" uid="uid://dauvgwp432qkw" path="res://scenes/HUD.tscn" id="4_hud"]
+[ext_resource type="PackedScene" uid="uid://c68pudvvqb5kh" path="res://scenes/EnemySpawner2.tscn" id="6_ygjfp"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -31,7 +31,6 @@ position = Vector2(-604, 550)
 position = Vector2(-949, 339)
 
 [node name="HUD" parent="." instance=ExtResource("4_hud")]
-position = Vector2(-326, 663)
 
 [node name="EnemySpawner4" parent="." instance=ExtResource("4_611at")]
 position = Vector2(-249, 752)
@@ -48,3 +47,45 @@ position = Vector2(-549, 682)
 [node name="EnemySpawner8" parent="." instance=ExtResource("4_611at")]
 position = Vector2(1404, 225)
 scale = Vector2(0.25, 0.25)
+
+[node name="EnemySpawner11" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(8, 1079)
+
+[node name="EnemySpawner9" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(8, 1079)
+
+[node name="EnemySpawner12" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(1081, 1115)
+
+[node name="EnemySpawner10" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(1081, 1115)
+
+[node name="EnemySpawner13" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(-1139, 400)
+
+[node name="EnemySpawner14" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-796, 253)
+
+[node name="EnemySpawner15" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-621, 1376)
+
+[node name="EnemySpawner16" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-476, 1523)
+
+[node name="EnemySpawner18" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-611, 1823)
+
+[node name="EnemySpawner17" parent="." instance=ExtResource("6_ygjfp")]
+position = Vector2(-943, 1580)
+
+[node name="EnemySpawner19" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(868, 1598)
+
+[node name="EnemySpawner20" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(1231, 1445)
+
+[node name="EnemySpawner21" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(776, 1318)
+
+[node name="EnemySpawner22" parent="." instance=ExtResource("3_c6dvc")]
+position = Vector2(415, 1082)

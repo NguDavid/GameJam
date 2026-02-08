@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var max_health: float = 100.0
 
 signal player_died
+signal health_changed(current_health, max_health)
 
 var current_health: float
 var is_dead: bool = false
@@ -18,6 +19,7 @@ var is_attacking: bool = false
 
 func _ready() -> void:
 	current_health = max_health
+	emit_signal("health_changed", current_health, max_health)
 	add_to_group("Player")
 	if sprite:
 		sprite.animation_finished.connect(_on_animation_finished)
@@ -49,6 +51,7 @@ func take_damage(source_position: Vector2, damage: float = 25.0):
 	if is_dead:
 		return
 	current_health -= damage
+	emit_signal("health_changed", current_health, max_health)
 	var push_dir = source_position.direction_to(global_position)
 	velocity = push_dir * 400.0
 	move_and_slide()

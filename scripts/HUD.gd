@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var timer_label = $TimerLabel
 @onready var win_label = $WinLabel
 @onready var game_over_label = $GameOverLabel
+@onready var health_bar = $HealthBar
 
 var time_left = 300.0 # 5 minutes in seconds
 
@@ -10,6 +11,9 @@ func _ready():
 	var player = get_tree().get_first_node_in_group("Player")
 	if player:
 		player.player_died.connect(show_game_over)
+		player.health_changed.connect(update_health_bar)
+		# Initialize health bar
+		update_health_bar(player.current_health, player.max_health)
 
 func _process(delta):
 	if time_left > 0:
@@ -24,6 +28,10 @@ func show_game_over():
 	game_over_label.visible = true
 	# Optional: Pause the game or stop the timer?
 	# For now just showing the label as requested.
+
+func update_health_bar(current_value, max_value):
+	health_bar.max_value = max_value
+	health_bar.value = current_value
 
 func update_timer_display():
 	var minutes = floor(time_left / 60)

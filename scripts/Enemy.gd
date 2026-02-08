@@ -33,6 +33,7 @@ func _on_hitbox_body_entered(body: Node) -> void:
 		if body.has_method("take_damage"):
 			body.take_damage(global_position, damage)
 			is_dashing = false
+			dash_timer.start(2.5)
 
 func _physics_process(delta: float) -> void:
 	if player == null or is_dead:
