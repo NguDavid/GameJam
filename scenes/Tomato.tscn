@@ -285,6 +285,7 @@ radius = 35.22783
 radius = 45.39824
 
 [node name="Tomato" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_gb5vg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

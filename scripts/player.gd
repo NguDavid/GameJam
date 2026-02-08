@@ -89,7 +89,7 @@ func on_attack_event() -> void:
 func shoot_bullets() -> void:
 	if bullet_scene == null:
 		return
-	var bullet_count = 20
+	var bullet_count = 12
 	var delay_between_shots = (1.0 / 3.0) / bullet_count 
 	var total_spread = deg_to_rad(20.0)
 	var base_dir = get_vector_from_string(last_direction)

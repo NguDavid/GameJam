@@ -2,6 +2,7 @@ extends Node2D
 
 @export var boss_scene: PackedScene
 @onready var boss_timer: Timer = $Timer
+@export var max_enemies: int = 25
 
 func _ready() -> void:
 	print("--- Spawner initialisé ---")
@@ -26,7 +27,7 @@ func _on_boss_timer_timeout() -> void:
 	var current_bosses = get_tree().get_nodes_in_group("Boss")
 	print("Nombre de boss actuellement en jeu : ", current_bosses.size())
 	
-	if current_bosses.size() == 0:
+	if current_bosses.size() < max_enemies:
 		spawn_boss()
 	else:
 		print("Spawn annulé : Un boss est déjà présent.")
